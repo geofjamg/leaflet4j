@@ -14,7 +14,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>l4jdemo Client for iOS</name>
+    <name>Client for iOS</name>
 
     <properties>
         <project.mainclass>org.apidesign.html.demo.l4jdemo.iOSMain</project.mainclass>
