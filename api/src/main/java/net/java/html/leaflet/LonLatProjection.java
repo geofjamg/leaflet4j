@@ -23,42 +23,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet;
+
+import net.java.html.js.JavaScriptBody;
 
 
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Equirectangular, or Plate Carree projection
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
+public final class LonLatProjection extends IProjection {
+
+    private static final LonLatProjection instance = new LonLatProjection();
     
     static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+        Options.initJS();
+        IProjection.registerProjection("LonLatProjection", instance);
     }
     
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+    /**
+     * Returns the Instance of LonLatProjection
+     * @return instance of LonLatProjection
+     */
+    public LonLatProjection get() {
+        return instance;
     }
     
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+    private LonLatProjection() {
+        super(getProjectionInternal());
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
+    @JavaScriptBody(args = {}, body = "return L.Projection.LonLat;")
+    private static native Object getProjectionInternal();
 }

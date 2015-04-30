@@ -23,42 +23,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
-
-
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
+package net.java.html.leaflet.event;
 
 /**
  *
- * @author Stefan Wurzinger
+ * @author Andreas Grimmer
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
-    static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
-    }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
-    }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
-    }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+public interface MouseListener extends EventListener<MouseEvent> {
+
 }

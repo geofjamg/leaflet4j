@@ -23,42 +23,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
-
-
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
+package net.java.html.leaflet.event;
 
 /**
  *
- * @author Stefan Wurzinger
+ * @author Andreas Grimmer
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
-    static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+public final class TileEvent extends Event {
+
+    private final Object tile;
+    private final String url;
+
+    public TileEvent(final Object src, final String type, final Object tile,
+            final String url) {
+        super(src, type);
+        this.tile = tile;
+        this.url = url;
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * @return the tile
+     */
+    public Object getTile() {
+        return tile;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
+
+    public static enum Type {
+
+        TILELOADSTART, TILELOAD, TILEUNLOAD;
+
+        @Override
+        public String toString() {
+            return super.toString().toLowerCase();
+        }
     }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
 }

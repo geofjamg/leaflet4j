@@ -23,42 +23,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet;
+
+import net.java.html.js.JavaScriptBody;
 
 
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Spherical Mercator projection
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
+public final class SphericalMercatorProjection extends IProjection {
+
+ 
+    private static final SphericalMercatorProjection instance = new SphericalMercatorProjection();
     
     static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+        Options.initJS();
+        IProjection.registerProjection("SphericalMercatorProjection", instance);
     }
     
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+    /**
+     * Returns the instance of the Spherical Mercator Projection
+     * @return instance of the Spherical Mercator Projection
+     */
+    public SphericalMercatorProjection get() {
+        return instance;
     }
     
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    private SphericalMercatorProjection() {
+        super(getProjectionInternal());
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
+    @JavaScriptBody(args = {}, body = "return L.Projection.SphericalMercator;")
+    private static native Object getProjectionInternal();
 }

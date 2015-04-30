@@ -26,21 +26,21 @@
 package org.apidesign.html.demo.l4jdemo;
 
 import net.java.html.boot.BrowserBuilder;
-import org.apidesign.html.leaflet.api.ILayer;
-import org.apidesign.html.leaflet.api.Icon;
-import org.apidesign.html.leaflet.api.IconOptions;
-import org.apidesign.html.leaflet.api.LatLng;
-import org.apidesign.html.leaflet.api.event.MouseEvent;
-import org.apidesign.html.leaflet.api.event.MouseListener;
-import org.apidesign.html.leaflet.api.Map;
-import org.apidesign.html.leaflet.api.MapOptions;
-import org.apidesign.html.leaflet.api.TileLayer;
-import org.apidesign.html.leaflet.api.TileLayerOptions;
-import org.apidesign.html.leaflet.api.Marker;
-import org.apidesign.html.leaflet.api.MarkerOptions;
-import org.apidesign.html.leaflet.api.Polygon;
-import org.apidesign.html.leaflet.api.Popup;
-import org.apidesign.html.leaflet.api.PopupOptions;
+import net.java.html.leaflet.ILayer;
+import net.java.html.leaflet.Icon;
+import net.java.html.leaflet.IconOptions;
+import net.java.html.leaflet.LatLng;
+import net.java.html.leaflet.event.MouseEvent;
+import net.java.html.leaflet.event.MouseListener;
+import net.java.html.leaflet.Map;
+import net.java.html.leaflet.MapOptions;
+import net.java.html.leaflet.TileLayer;
+import net.java.html.leaflet.TileLayerOptions;
+import net.java.html.leaflet.Marker;
+import net.java.html.leaflet.MarkerOptions;
+import net.java.html.leaflet.Polygon;
+import net.java.html.leaflet.Popup;
+import net.java.html.leaflet.PopupOptions;
 
 /**
  *

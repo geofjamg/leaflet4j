@@ -23,42 +23,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet.event;
 
-
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
+import net.java.html.leaflet.Popup;
 
 /**
  *
- * @author Stefan Wurzinger
+ * @author Andreas Grimmer
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
-    static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+public final class PopupEvent extends Event {
+
+    private final Popup popup;
+
+    public PopupEvent(final Object src, final String type, final Popup popup) {
+        super(src, type);
+        this.popup = popup;
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * @return the popup
+     */
+    public Popup getPopup() {
+        return popup;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    public static enum Type {
+
+        POPUPOPEN, POPUPCLOSE;
+
+        @Override
+        public String toString() {
+            return super.toString().toLowerCase();
+        }
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
 }

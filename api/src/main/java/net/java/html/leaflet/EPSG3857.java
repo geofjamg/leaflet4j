@@ -23,42 +23,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet;
+
+import net.java.html.js.JavaScriptBody;
 
 
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
 
 /**
- *
- * @author Stefan Wurzinger
+ * The most common CRS for online maps, used by almost all free and commercial
+ * tile providers. Uses Spherical Mercator projection.
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
+final class EPSG3857 extends ICRS {
+    private static final EPSG3857 instance = new EPSG3857();
     static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+        Options.initJS();
+        ICRS.registerCRS("EPSG3857", instance);
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * Returns the Instance of EPSG3857 CRS
+     *
+     * @return instance of EPSG3857 CRS
+     */
+    static EPSG3857 get() {
+        return instance;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    private EPSG3857() {
+        super(getCRSInternal());
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
+    @JavaScriptBody(args = {}, body = "return L.CRS.EPSG3857;")
+    private static native Object getCRSInternal();
+
 }

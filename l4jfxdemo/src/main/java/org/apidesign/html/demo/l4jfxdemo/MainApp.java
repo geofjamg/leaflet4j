@@ -33,7 +33,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import net.java.html.boot.fx.FXBrowsers;
-import org.apidesign.html.leaflet.api.LatLng;
+import net.java.html.leaflet.LatLng;
 
 public class MainApp extends Application {
 

@@ -23,42 +23,46 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
-
-
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
+package net.java.html.leaflet;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Options for configuring a {@link ImageOverlay} layer.
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
-    static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+public final class ImageOverlayOptions {
+
+    private final Options options = new Options();
+
+    Object getJSObj() {
+        return options.createJSObj();
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * Creates ImageOverlay options.
+     */
+    public ImageOverlayOptions() {
+
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    /**
+     * Sets opacity option
+     *
+     * @param opacity The opacity of the image overlay.
+     * @return updated options
+     */
+    public ImageOverlayOptions setOpacity(double opacity) {
+        options.setValue("opacity", opacity);
+        return this;
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
+
+    /**
+     * Sets attribution option
+     *
+     * @param attribution The attribution text of the image overlay.
+     * @return updated options
+     */
+    public ImageOverlayOptions setAttribution(String attribution) {
+        options.setValue("attribution", attribution);
+        return this;
     }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
 }

@@ -28,13 +28,13 @@ package org.apidesign.html.demo.l4jfxdemo;
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
 import net.java.html.boot.fx.FXBrowsers;
-import org.apidesign.html.leaflet.api.Circle;
-import org.apidesign.html.leaflet.api.LatLng;
-import org.apidesign.html.leaflet.api.Map;
-import org.apidesign.html.leaflet.api.PathOptions;
-import org.apidesign.html.leaflet.api.Polygon;
-import org.apidesign.html.leaflet.api.TileLayer;
-import org.apidesign.html.leaflet.api.TileLayerOptions;
+import net.java.html.leaflet.Circle;
+import net.java.html.leaflet.LatLng;
+import net.java.html.leaflet.Map;
+import net.java.html.leaflet.PathOptions;
+import net.java.html.leaflet.Polygon;
+import net.java.html.leaflet.TileLayer;
+import net.java.html.leaflet.TileLayerOptions;
 
 /**
  * A simple example View of how to embed DukeScript in a JavaFX Application. In

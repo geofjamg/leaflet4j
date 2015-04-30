@@ -23,42 +23,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
-
-
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
+package net.java.html.leaflet;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Zoom options
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
-    static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+public final class ZoomOptions {
+
+    private final Options options = new Options();
+
+    Object getJSObj() {
+        return options.createJSObj();
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * If not specified, zoom animation will happen if the zoom origin is inside
+     * the current view. If <code>true</code>, the map will attempt animating
+     * zoom disregarding where zoom origin is. Setting <code>false</code> will
+     * make it always reset the view completely without animation.
+     *
+     * @param animate The animate option.
+     * @return Returns a <code>ZoomOptions</code> object with the set options.
+     */
+    public ZoomOptions setAnimate(boolean animate) {
+        options.setValue("animate", animate);
+        return this;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
-    }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
 }

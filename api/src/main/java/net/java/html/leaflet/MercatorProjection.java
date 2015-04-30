@@ -23,42 +23,37 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet;
+
+import net.java.html.js.JavaScriptBody;
 
 
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Elliptical Mercator projection
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
+public final class MercatorProjection extends IProjection {
+
+    private static final MercatorProjection instance = new MercatorProjection();
+
     static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+        Options.initJS();
+        IProjection.registerProjection("MercatorProjection", instance);
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    /**
+     * Returns the instance of the Mercator Projection
+     *
+     * @return instance of the Mercator Projection
+     */
+    public MercatorProjection get() {
+        return instance;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    private MercatorProjection() {
+        super(getProjectionInternal());
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
+    @JavaScriptBody(args = {}, body = "return L.Projection.Mercator;")
+    private static native Object getProjectionInternal();
 }

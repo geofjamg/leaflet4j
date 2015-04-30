@@ -23,42 +23,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package org.apidesign.html.demo.l4jdemo;
+package net.java.html.leaflet;
+
+import net.java.html.js.JavaScriptBody;
 
 
-import net.java.html.js.JavaScriptResource;
-import net.java.html.leaflet.ILayer;
-import net.java.html.leaflet.LatLng;
 
 /**
- *
- * @author Stefan Wurzinger
+ * Represents an icon to provide when creating a marker.
  */
-//TBD: @JavaScriptResource("/org/apidesign/html/demo/leaflet/customLayer.js")
-public class ExampleCustomLayer {
-    /* TBD
-extends ILayer {
-    
+public final class Icon {
     static {
-     // TBD   registerLayerType("ExampleCustomLayer", (obj)->new ExampleCustomLayer(obj));
+        Options.initJS();
     }
-    
-    private ExampleCustomLayer(Object jsObj) {
-        super(jsObj);
+
+    private final Object jsObj;
+
+    Object getJSObj() {
+        return jsObj;
     }
-    
-    public ExampleCustomLayer(LatLng latlng) {
-        super(create(getJSObj(latlng), "https://cdnjs.cloudflare.com/ajax/libs/fatcow-icons/20130425/FatCow_Icons32x32/radioactivity.png"));
+
+    /**
+     * Creates an icon instance with the given options.
+     * @param options Icon options
+     */
+    public Icon(IconOptions options) {
+        this.jsObj = create(options.getJSObj());
     }
-    
-    public ExampleCustomLayer(LatLng latlng, String imgURL) {
-        super(create(getJSObj(latlng), imgURL));
-    }
-    
-    
-    
-    @JavaScriptBody(args = {"latlng", "imgURL"}, body
-            = "return new ExampleCustomLayer(latlng, imgURL);")
-    private static native Object create(Object latlng, String imgURL);
-    */
+
+    @JavaScriptBody(args = {"options"},
+            body = "return L.icon(options);")
+    private static native Object create(Object options);
+
 }
