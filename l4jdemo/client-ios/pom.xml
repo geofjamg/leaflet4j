@@ -145,7 +145,7 @@
             <plugin>
                 <groupId>org.robovm</groupId>
                 <artifactId>robovm-maven-plugin</artifactId>
-                <version>1.0.0-beta-03</version>
+                <version>1.1.0</version>
                 <configuration>
                     <config>
                         <mainClass>${project.mainclass}</mainClass>
