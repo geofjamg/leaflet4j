@@ -185,7 +185,7 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>org.apidesign.html.demo</groupId>
+      <groupId>com.dukescript.api</groupId>
       <artifactId>leaflet4j</artifactId>
       <version>1.0-SNAPSHOT</version>
       <type>jar</type>
