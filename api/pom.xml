@@ -12,6 +12,42 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <bck2brwsr.version>0.14</bck2brwsr.version>
     </properties>
+    
+    <url>http://dukescript.com</url>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>eppleton</id>
+            <name>Anton Epple</name>
+            <email>dukescript@eppleton.de</email>
+            <organization>Eppleton IT Consulting</organization>
+            <organizationUrl>http://www.eppleton.de</organizationUrl>
+            <roles>
+                <role>Project-Administrator</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/dukescript/leaflet4j.git/</connection>
+        <developerConnection>scm:git:https://github.com/dukescript/leaflet4j.git</developerConnection>
+        <tag>release-${releaseVersion}</tag>
+        <url>https://github.com/dukescript/leaflet4j.git</url>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+        
     <build>
         <plugins>
             <plugin>
