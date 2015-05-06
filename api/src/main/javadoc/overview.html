@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Leaflet API for Java</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>
+        This is <b>Java</b> version of <a target="_blank" href="http://leafletjs.com">leaflet</a> 
+        library for rendering of mobile friendly interactive maps. The API
+        has been designed by students of 
+        <a target="_blank" href="http://www.jku.at/">Johannes Kepler University of Linz</a>
+        (<em>Andreas Grimmer, Christoph Sperl, Stefan Wurzinger</em>)
+        as part of their 2015 API Design course. The API has been adopted and is
+        distributed as part of the 
+        <a target="_blank" href="http://dukescript.com">DukeScript</a>
+        project. Here is a sample code to help you relalize there the
+        Johannes Kepler University is:
+        </p>
+        
+        <p>
+<pre>
+<span class="comment">// Create a map zoomed to Linz.</span>
+{@link net.java.html.leaflet.MapOptions} mapOptions = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.MapOptions}()
+        .setCenter(<span class="keyword-directive">new</span> LatLng(48.336614, 14.319305))
+        .setZoom(15);
+<span class="keyword-directive">final</span> {@link net.java.html.leaflet.Map} map = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.Map}(<span class="character">&quot;</span><span class="character">map</span><span class="character">&quot;</span>, mapOptions);
+
+<span class="comment">// add a tile layer to the map</span>
+{@link net.java.html.leaflet.TileLayerOptions} tlo = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.TileLayerOptions}();
+tlo.setAttribution(<span class="character">&quot;</span><span class="character">Map data &amp;copy; &lt;a href=&#39;</span><span class="character">http://www.thunderforest.com/opencyclemap/</span><span class="character">&#39;&gt;OpenCycleMap&lt;/a&gt; contributors, </span><span class="character">&quot;</span>
+        + <span class="character">&quot;</span><span class="character">&lt;a href=&#39;</span><span class="character">http://creativecommons.org/licenses/by-sa/2.0/</span><span class="character">&#39;&gt;CC-BY-SA&lt;/a&gt;, </span><span class="character">&quot;</span>
+        + <span class="character">&quot;</span><span class="character">Imagery © &lt;a href=&#39;</span><span class="character">http://www.thunderforest.com/</span><span class="character">&#39;&gt;Thunderforest&lt;/a&gt;</span><span class="character">&quot;</span>);
+tlo.setMaxZoom(18);
+{@link net.java.html.leaflet.TileLayer} layer = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.TileLayer}(<span class="character">&quot;</span><span class="character">http://</span><span class="character">{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png</span><span class="character">&quot;</span>, tlo);
+map.addLayer(layer);
+
+<span class="comment">// Add a polygon. When you click on the polygon a popup shows up</span>
+{@link net.java.html.leaflet.Polygon} polygonLayer = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.Polygon}(<span class="keyword-directive">new</span> LatLng[] {
+        <span class="keyword-directive">new</span> LatLng(48.335067, 14.320660),
+        <span class="keyword-directive">new</span> LatLng(48.337335, 14.323642),
+        <span class="keyword-directive">new</span> LatLng(48.335238, 14.328942),
+        <span class="keyword-directive">new</span> LatLng(48.333883, 14.327612)
+});
+polygonLayer.addMouseListener({@link net.java.html.leaflet.event.MouseEvent}.<span class="ST0">Type</span>.<span class="ST1">CLICK</span>, <span class="keyword-directive">new</span> MouseListener() {
+    {@code @Override}
+    <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST2">onEvent</span>(MouseEvent ev) {
+        {@link net.java.html.leaflet.PopupOptions} popupOptions = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.PopupOptions}().setMaxWidth(400);
+        {@link net.java.html.leaflet.Popup} popup = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.Popup}(popupOptions);
+        popup.setLatLng(ev.getLatLng());
+        popup.setContent(<span class="character">&quot;</span><span class="character">The Leaflet API for Java has been created here!</span><span class="character">&quot;</span>);
+        popup.openOn(map);
+    }
+});
+map.addLayer(polygonLayer);
+</pre>
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST0 {font-family: Monospaced; font-style: italic}
+.ST2 {font-family: Monospaced; font-weight: bold}
+.comment {color: #969696}
+.character {color: #ce7b00}
+.ST1 {color: #009900; font-family: Monospaced; font-style: italic}
+.keyword-directive {color: #0000e6}
+-->
+</style>
+        </p>
+    </body>
+</html>
