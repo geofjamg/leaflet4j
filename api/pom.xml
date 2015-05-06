@@ -89,6 +89,33 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <inherited>false</inherited>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.9.0</version>
+                <executions>
+                    <execution>
+                        <id>licenses</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <basedir>${basedir}</basedir>
+                    <header>../COPYING_JKU</header>
+                    <validHeaders>
+                        <validHeader>../COPYING</validHeader>
+                    </validHeaders>
+                    <strictCheck>true</strictCheck>
+                    <excludes>
+                        <exclude>*</exclude>
+                        <exclude>.*/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
