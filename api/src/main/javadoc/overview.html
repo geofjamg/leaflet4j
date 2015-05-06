@@ -39,12 +39,12 @@ map.addLayer(layer);
 
 <span class="comment">// Add a polygon. When you click on the polygon a popup shows up</span>
 {@link net.java.html.leaflet.Polygon} polygonLayer = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.Polygon}(<span class="keyword-directive">new</span> LatLng[] {
-        <span class="keyword-directive">new</span> LatLng(48.335067, 14.320660),
-        <span class="keyword-directive">new</span> LatLng(48.337335, 14.323642),
-        <span class="keyword-directive">new</span> LatLng(48.335238, 14.328942),
-        <span class="keyword-directive">new</span> LatLng(48.333883, 14.327612)
+        <span class="keyword-directive">new</span> {@link net.java.html.leaflet.LatLng}(48.335067, 14.320660),
+        <span class="keyword-directive">new</span> {@link net.java.html.leaflet.LatLng}(48.337335, 14.323642),
+        <span class="keyword-directive">new</span> {@link net.java.html.leaflet.LatLng}(48.335238, 14.328942),
+        <span class="keyword-directive">new</span> {@link net.java.html.leaflet.LatLng}(48.333883, 14.327612)
 });
-polygonLayer.addMouseListener({@link net.java.html.leaflet.event.MouseEvent}.<span class="ST0">Type</span>.<span class="ST1">CLICK</span>, <span class="keyword-directive">new</span> MouseListener() {
+polygonLayer.addMouseListener({@link net.java.html.leaflet.event.MouseEvent}.<span class="ST0">Type</span>.<span class="ST1">CLICK</span>, <span class="keyword-directive">new</span> {@link net.java.html.leaflet.event.MouseListener}() {
     {@code @Override}
     <span class="keyword-directive">public</span> <span class="keyword-directive">void</span> <span class="ST2">onEvent</span>(MouseEvent ev) {
         {@link net.java.html.leaflet.PopupOptions} popupOptions = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.PopupOptions}().setMaxWidth(400);
@@ -58,9 +58,7 @@ map.addLayer(polygonLayer);
 </pre>
 <style type="text/css">
 <!--
-body {color: #000000; background-color: #ffffff; font-family: Monospaced}
 pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
-table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 .ST0 {font-family: Monospaced; font-style: italic}
 .ST2 {font-family: Monospaced; font-weight: bold}
 .comment {color: #969696}
