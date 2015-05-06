@@ -31,6 +31,18 @@
         <title>Leaflet API for Java</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="resources/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="style.css" type="text/css">
+
+        <style type="text/css">
+        pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+        .ST0 {font-family: Monospaced; font-style: italic}
+        .ST2 {font-family: Monospaced; font-weight: bold}
+        .comment {color: #969696}
+        .character {color: #ce7b00}
+        .ST1 {color: #009900; font-family: Monospaced; font-style: italic}
+        .keyword-directive {color: #0000e6}
+        </style>
     </head>
     <body>
         <p>
@@ -46,8 +58,6 @@
         <a target="_blank" href="http://www.jku.at/">Johannes Kepler University</a>
         is:
         </p>
-        
-        <p>
 <pre>
 <span class="comment">// Create a map zoomed to Linz.</span>
 {@link net.java.html.leaflet.MapOptions} mapOptions = <span class="keyword-directive">new</span> {@link net.java.html.leaflet.MapOptions}()
@@ -83,17 +93,9 @@ polygonLayer.addMouseListener({@link net.java.html.leaflet.event.MouseEvent}.<sp
 });
 map.addLayer(polygonLayer);
 </pre>
-<style type="text/css">
-<!--
-pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
-.ST0 {font-family: Monospaced; font-style: italic}
-.ST2 {font-family: Monospaced; font-weight: bold}
-.comment {color: #969696}
-.character {color: #ce7b00}
-.ST1 {color: #009900; font-family: Monospaced; font-style: italic}
-.keyword-directive {color: #0000e6}
--->
-</style>
-        </p>
+
+        <h3>Result of the Program</h3>
+
+        <iframe id="map" width="640" height="400" src="resources/index.html"></iframe>
     </body>
 </html>

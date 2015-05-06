@@ -55,6 +55,7 @@
                   <excludes>
                       <exclude>*</exclude>
                       <exclude>.*/**</exclude>
+                      <exclude>**/javadoc/resources/**</exclude>
                   </excludes>
               </configuration>
           </plugin>
