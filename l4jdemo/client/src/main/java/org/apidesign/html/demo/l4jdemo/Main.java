@@ -110,7 +110,7 @@ public final class Main {
                 PopupOptions popupOptions = new PopupOptions().setMaxWidth(400);
                 Popup popup = new Popup(popupOptions);
                 popup.setLatLng(ev.getLatLng());
-                popup.setContent("You clicked on this polygon;");
+                popup.setContent("The Leaflet API for Java has been created here!");
                 popup.openOn(map);
             }
         });
