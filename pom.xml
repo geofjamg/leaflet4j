@@ -29,6 +29,12 @@
       <name>API Design</name>
       <url>http://apidesign.org</url>
   </organization>
+  <scm>
+      <connection>scm:git:https://github.com/dukescript/leaflet4j.git/</connection>
+      <developerConnection>scm:git:https://github.com/dukescript/leaflet4j.git</developerConnection>
+      <tag>release-${releaseVersion}</tag>
+      <url>https://github.com/dukescript/leaflet4j.git</url>
+  </scm>
   <build>
       <plugins>
           <plugin>
