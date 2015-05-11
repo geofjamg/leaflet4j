@@ -2,8 +2,8 @@ Leaflet for Java API
 ====================
 
 Java library for rendering of mobile friendly interactive maps in Java.
-Read more in (Javadoc)[https://dukescript.com/javadoc/leaflet4j/]. Include
-in your (Maven)[http://search.maven.org/#browse|-1576608228] project as:
+Read more in Javadoc(https://dukescript.com/javadoc/leaflet4j/). Include
+in your Maven(http://search.maven.org/#browse|-1576608228) project as:
 
 ```xml
 <dependency>
@@ -16,8 +16,8 @@ in your (Maven)[http://search.maven.org/#browse|-1576608228] project as:
 Leaflet Demo
 ============
 
-(Leaflet Demo)[http://leafletjs.com/examples/quick-start.html] rewritten to Java 
-via (DukeScript)[http://html.java.net]. Clone and then:
+[Leaflet Demo](http://leafletjs.com/examples/quick-start.html) rewritten to Java 
+via [DukeScript](http://html.java.net). Clone and then:
 
     # prepare
     $ mvn clean install 
@@ -34,6 +34,7 @@ via (DukeScript)[http://html.java.net]. Clone and then:
 
 to see the application. Check Main.java to see the initialization which basically consists of:
 
+```java
     public static void onPageLoad(String... args) throws Exception {
         // Create custom layer
         ExampleCustomLayer duckLayer = new ExampleCustomLayer(new LatLng(48.337074, 14.319868), 
@@ -79,11 +80,13 @@ to see the application. Check Main.java to see the initialization which basicall
         });
         map.addLayer(polygonLayer);
     }
+```
 
 Fork and improve the Java leaflet bindings.
 Or fork and design your own Java wrappers 
 around your favorite JavaScript library as 
-described at http://bits.netbeans.org/html+java/0.8.2/net/java/html/js/package-summary.html
+described at this
+[great introduction](http://bits.netbeans.org/html+java/1.1/net/java/html/js/package-summary.html).
 
 
 Running inside of JavaFX Application
