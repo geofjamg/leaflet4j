@@ -2,8 +2,8 @@ Leaflet for Java API
 ====================
 
 Java library for rendering of mobile friendly interactive maps in Java.
-Read more in Javadoc[https://dukescript.com/javadoc/leaflet4j/]. Include
-in your Maven[http://maven.apache.org] project as:
+Read more in (Javadoc)[https://dukescript.com/javadoc/leaflet4j/]. Include
+in your (Maven)[http://search.maven.org/#browse|-1576608228] project as:
 
 ```xml
 <dependency>
@@ -16,7 +16,8 @@ in your Maven[http://maven.apache.org] project as:
 Leaflet Demo
 ============
 
-Leaflet Demo[http://leafletjs.com/examples/quick-start.html] rewritten to Java via DukeScript[http://html.java.net]. Clone and then:
+(Leaflet Demo)[http://leafletjs.com/examples/quick-start.html] rewritten to Java 
+via (DukeScript)[http://html.java.net]. Clone and then:
 
     # prepare
     $ mvn clean install 
