@@ -605,43 +605,43 @@ public final class Map {
     }
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getCenter();")
+            body = "return jsObj.getCenter();")
     private static native Object getCenterInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getZoom();")
+            body = "return jsObj.getZoom();")
     private static native int getZoomInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getMinZoom();")
+            body = "return jsObj.getMinZoom();")
     private static native int getMinZoomInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getMaxZoom();")
+            body = "return jsObj.getMaxZoom();")
     private static native int getMaxZoomInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getBounds();")
+            body = "return jsObj.getBounds();")
     private static native Object getBoundsInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj", "bounds"},
-            body = "jsObj.getBoundsZoom(bounds);")
+            body = "return jsObj.getBoundsZoom(bounds);")
     private static native int getBoundsZoom1Internal(Object jsObj, Object bounds);
 
     @JavaScriptBody(args = {"jsObj", "bounds", "inside"},
-            body = "jsObj.getBoundsZoom(bounds, inside);")
+            body = "return jsObj.getBoundsZoom(bounds, inside);")
     private static native int getBoundsZoom2Internal(Object jsObj, Object bounds, boolean inside);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getSize();")
+            body = "return jsObj.getSize();")
     private static native Object getSizeInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getPixelBounds();")
+            body = "return jsObj.getPixelBounds();")
     private static native Object getPixelBoundsInternal(Object jsObj);
 
     @JavaScriptBody(args = {"jsObj"},
-            body = "jsObj.getPixelOrigin();")
+            body = "return jsObj.getPixelOrigin();")
     private static native Object getPixelOriginInternal(Object jsObj);
 
     // Conversion methods
