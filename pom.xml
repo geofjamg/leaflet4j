@@ -62,6 +62,7 @@
                       <exclude>*</exclude>
                       <exclude>.*/**</exclude>
                       <exclude>**/javadoc/resources/**</exclude>
+                      <exclude>api/src/main/resources/net/java/html/leaflet/leaflet.js</exclude>
                   </excludes>
               </configuration>
           </plugin>
