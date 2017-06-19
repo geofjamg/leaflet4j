@@ -7,3 +7,5 @@
 /l4jdemo/client-ios/target/
 /l4jdemo/client-android/target/
 
+/.idea
+*.iml
