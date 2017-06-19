@@ -1,9 +1,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (C) 2015 Andreas Grimmer <a.grimmer@gmx.at>
- * Christoph Sperl <ch.sperl@gmx.at>
- * Stefan Wurzinger <swurzinger@gmx.at>
+ * Copyright (C) 2017 Geoffroy Jamgotchian <geoffroy.jamgotchian at gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package net.java.html.leaflet;
+package net.java.html.leaflet.cluster;
+
+import net.java.html.leaflet.IIcon;
+
+import java.util.function.Function;
 
 /**
- *
- * @author Jaroslav Tulach
+ * @author Geoffroy Jamgotchian <geoffroy.jamgotchian at gmail.com>
  */
-public interface Function<T, R> {
-    public R apply(T obj);
+public class IconCreateFunctionInternal {
+
+    private final Function<MarkerCluster, IIcon> iconCreateFunction;
+
+    public IconCreateFunctionInternal(Function<MarkerCluster, IIcon> iconCreateFunction) {
+        this.iconCreateFunction = iconCreateFunction;
+    }
+
+    public Object create(Object cluster) {
+        return iconCreateFunction.apply(new MarkerCluster(cluster)).getJSObj();
+    }
 }

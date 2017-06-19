@@ -42,7 +42,7 @@ public abstract class ILayer {
     static {
         Options.initJS();
     }
-    final Object jsObj;
+    protected final Object jsObj;
 
     private final static HashMap<String, Function<Object, ILayer>> registeredLayerTypes = new HashMap<>();
 
@@ -52,13 +52,13 @@ public abstract class ILayer {
      * @param layerTypeName The global accessible JS layer type name
      * @param creator A function returning a new Layer instance from a JS object
      */
-    static void registerLayerType(String layerTypeName, Function<Object, ILayer> creator) {
+    public static void registerLayerType(String layerTypeName, Function<Object, ILayer> creator) {
         if (!registeredLayerTypes.containsKey(layerTypeName)) {
             registeredLayerTypes.put(layerTypeName, creator);
         }
     }
 
-    static void unregisterLayerType(String layerTypeName) {
+    public static void unregisterLayerType(String layerTypeName) {
         registeredLayerTypes.remove(layerTypeName);
     }
 
@@ -89,11 +89,11 @@ public abstract class ILayer {
         return registeredLayerTypes.get(compatibleTypes.get(0)).apply(jsObj);
     }
 
-    ILayer(Object jsObj) {
+    protected ILayer(Object jsObj) {
         this.jsObj = jsObj;
     }
 
-    Object getJSObj() {
+    public Object getJSObj() {
         return jsObj;
     }
 

@@ -78,6 +78,7 @@
   </build>
   <modules>
     <module>api</module>
+    <module>leaflet-marker-cluster</module>
     <module>l4jfxdemo</module>
     <module>l4jdemo</module>
   </modules>

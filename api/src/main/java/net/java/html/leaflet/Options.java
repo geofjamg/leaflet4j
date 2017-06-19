@@ -37,9 +37,9 @@ import net.java.html.js.JavaScriptResource;
  * @author Christoph Sperl
  */
 @JavaScriptResource("leaflet.js")
-final class Options {
+public final class Options {
     private static boolean initialized;
-    static void initJS() {
+    public static void initJS() {
         if (!initialized) {
             init0();
             initialized = true;
@@ -69,7 +69,7 @@ final class Options {
         return o;
     }
 
-    Object createJSObj() {
+    public Object createJSObj() {
         Object[] names = map.keySet().toArray(new String[map.size()]);
         Object[] values = new Object[names.length];
         for (int i = 0; i < names.length; i++) {

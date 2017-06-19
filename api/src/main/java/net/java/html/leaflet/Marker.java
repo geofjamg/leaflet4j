@@ -50,7 +50,7 @@ public final class Marker extends ILayer {
         });
     }
 
-    private Marker(Object jsObj) {
+    public Marker(Object jsObj) {
         super(jsObj);
     }
 

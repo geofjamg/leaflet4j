@@ -46,10 +46,10 @@ public final class MarkerOptions {
     /**
      * Sets icon option
      *
-     * @param icon {@link Icon} class to use for rendering the marker.
+     * @param icon {@link IIcon} class to use for rendering the marker.
      * @return updated options
      */
-    public MarkerOptions setIcon(Icon icon) {
+    public MarkerOptions setIcon(IIcon icon) {
         options.setValue("icon", icon.getJSObj());
         return this;
     }
