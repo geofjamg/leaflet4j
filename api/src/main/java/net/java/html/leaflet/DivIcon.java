@@ -1,9 +1,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (C) 2015 Andreas Grimmer <a.grimmer@gmx.at>
- * Christoph Sperl <ch.sperl@gmx.at>
- * Stefan Wurzinger <swurzinger@gmx.at>
+ * Copyright (C) 2017 Geoffroy Jamgotchian <geoffroy.jamgotchian at gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,11 +26,10 @@ package net.java.html.leaflet;
 import net.java.html.js.JavaScriptBody;
 
 
-
 /**
- * Represents an icon to provide when creating a marker.
+ * Represents a lightweight icon for markers that uses a simple div element instead of an image.
  */
-public final class Icon implements IIcon {
+public final class DivIcon implements IIcon {
     static {
         Options.initJS();
     }
@@ -45,15 +42,15 @@ public final class Icon implements IIcon {
     }
 
     /**
-     * Creates an icon instance with the given options.
-     * @param options Icon options
+     * Creates a divIcon instance with the given options.
+     * @param options divIcon options
      */
-    public Icon(IconOptions options) {
+    public DivIcon(DivIconOptions options) {
         this.jsObj = create(options.getJSObj());
     }
 
     @JavaScriptBody(args = {"options"},
-            body = "return L.icon(options);")
+            body = "return L.divIcon(options);")
     private static native Object create(Object options);
 
 }

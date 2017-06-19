@@ -1,9 +1,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (C) 2015 Andreas Grimmer <a.grimmer@gmx.at>
- * Christoph Sperl <ch.sperl@gmx.at>
- * Stefan Wurzinger <swurzinger@gmx.at>
+ * Copyright (C) 2017 Geoffroy Jamgotchian <geoffroy.jamgotchian at gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,35 +23,10 @@
  */
 package net.java.html.leaflet;
 
-import net.java.html.js.JavaScriptBody;
-
-
-
 /**
- * Represents an icon to provide when creating a marker.
+ *
  */
-public final class Icon implements IIcon {
-    static {
-        Options.initJS();
-    }
+public interface IIcon {
 
-    private final Object jsObj;
-
-    @Override
-    public Object getJSObj() {
-        return jsObj;
-    }
-
-    /**
-     * Creates an icon instance with the given options.
-     * @param options Icon options
-     */
-    public Icon(IconOptions options) {
-        this.jsObj = create(options.getJSObj());
-    }
-
-    @JavaScriptBody(args = {"options"},
-            body = "return L.icon(options);")
-    private static native Object create(Object options);
-
+    Object getJSObj();
 }
